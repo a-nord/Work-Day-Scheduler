@@ -6,27 +6,19 @@ $(function () {
     $("#currentDay").text(rightNow);
   } , 1000);
 
-
-
-  var storedItem = localStorage.getItem("hour-9")
-  console.log(storedItem);
-  $("#hour-9").children(".description").val(storedItem);
-  
-  
-  // listener for click events on the save button
+  //save into local storage
   $(".saveBtn").on("click", function () {
-    
-    console.log($(this).siblings(".description").val());
-    
-    let id = $(this).parent().attr("id");
-    console.log(id);
-    let value = $(this).siblings(".description").val();
-    localStorage.setItem(id, value);
-    $(".notifications").addClass("displayBlock");
-    setTimeout(() => {
-      $(".removeClass").removeClass("displayBlock");
-    }, 1000);
+    var id = $(this).parent().attr("id");
+    var value = $(this).siblings(".description").val();
+    localStorage.setItem(id, value);        
+  }); 
+
+  //get local storage
+  $(".time-block").each(function () {        
+    $(this).find(".description").val(localStorage.getItem($(this).attr("id")));
   });
+
+
  
 });
 
