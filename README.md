@@ -39,5 +39,11 @@ THEN the saved events persist
 Here are links to the repo and to the webpage
 
 * The URL of the deployed application
+```md
+https://a-nord.github.io/Work-Day-Scheduler/
+```
 
-* The URL of the GitHub repository, with a unique name and a README describing the project
+* The URL of the GitHub repository
+```md
+https://github.com/a-nord/Work-Day-Scheduler
+```
