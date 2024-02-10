@@ -18,7 +18,21 @@ $(function () {
     $(this).find(".description").val(localStorage.getItem($(this).attr("id")));
   });
 
+  //set past, present, and future to blocks
+  $(".time-block").each(function () {
 
+    // variables for the current hour and the hour displayed
+    var hourNow = dayjs().hour();
+    var hourBlock = parseInt($(this).attr("id").split("-")[1]);
+
+    if (hourBlock < hourNow) {
+        $(this).addClass("past").removeClass("present future");
+    } else if (hourBlock === hourNow) {
+        $(this).addClass("present").removeClass("past future");
+    } else {
+        $(this).addClass("future").removeClass("present past");
+    }
+  });
  
 });
 
